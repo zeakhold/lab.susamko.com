@@ -301,13 +301,31 @@ single-work span i.fa,
 .box {
     position: relative;
     perspective: 1000px;
+    width: 100%;
 }
 
-.box img {
+.cover {
+    position: relative;
+    font-size: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.cover:after {
+    content: '';
+    /*这里由图片尺寸高除宽计算出百分比 */
+    padding-top: 66.6%;
+    display: block;
+}
+
+.cover img {
     width: 100%;
     height: auto;
+    position: absolute;
     opacity: 1;
     border: 4px solid #eee5f8;
+    background-color: white;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
